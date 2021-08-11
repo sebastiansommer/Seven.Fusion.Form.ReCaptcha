@@ -1,0 +1,19 @@
+prototype(Seven.Fusion.Form.ReCaptcha:ReCaptchaV2) < prototype(Neos.Fusion.Form:Component.Field) {
+    siteKey = ${Configuration.setting('Seven.Fusion.Form.ReCaptcha.siteKey')}
+    language = ${Array.first(node.context.dimensions.language)}
+
+    renderer = afx`
+        <div class="g-recaptcha form-field"
+             data-sitekey={props.siteKey}
+             data-callback="updateField"></div>
+
+        <input id="recaptcha-field" name={field.getName()} type="hidden"/>
+
+        <script type="text/javascript" src={'https://www.google.com/recaptcha/api.js?hl=' + props.language}></script>
+        <script>{"
+            function updateField(token) {
+                document.getElementById('recaptcha-field').value = token;
+            }
+        "}</script>
+    `
+}

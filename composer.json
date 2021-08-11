@@ -3,7 +3,8 @@
     "type": "neos-package",
     "description": "ReCaptcha Form Element for Fusion Forms",
     "require": {
-        "neos/flow": "*"
+        "neos/fusion-form": "^7.0",
+        "google/recaptcha": "^1.2"
     },
     "autoload": {
         "psr-4": {

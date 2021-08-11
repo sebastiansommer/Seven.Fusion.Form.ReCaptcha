@@ -1,0 +1,12 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        Seven.Fusion.Form.ReCaptcha: true
+
+Seven:
+  Fusion:
+    Form:
+      ReCaptcha:
+        siteKey: ''
+        secretKey: ''
