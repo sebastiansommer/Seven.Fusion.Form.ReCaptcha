@@ -1,0 +1,16 @@
+prototype(Seven.Fusion.Form.ReCaptcha:ReCaptchaV3) < prototype(Neos.Fusion.Form:Component.Field) {
+    siteKey = ${Configuration.setting('Seven.Fusion.Form.ReCaptcha.siteKey')}
+
+    renderer = afx`
+        <input id="recaptcha-field" name={field.getName()} type="hidden"/>
+
+        <script src={'https://www.google.com/recaptcha/api.js?render=' + props.siteKey}></script>
+        <script>{"
+                grecaptcha.ready(function () {
+                    grecaptcha.execute('" + props.siteKey + "', {action: '"+props.action+"'}).then(function (token) {
+                        document.getElementById('recaptcha-field').value = token;
+                    });
+                });
+            "}</script>
+    `
+}
