@@ -20,7 +20,7 @@ Seven:
 ## Add Elements to your Form
 **Please notice:** Its currently only possible to use one ReCaptcha element per page.
 
-### V2 (Verify requests with a score)
+### V2 (Verify requests with a challenge)
 ```HTML
 <Seven.Fusion.Form.ReCaptcha:ReCaptchaV2/>
 ```
